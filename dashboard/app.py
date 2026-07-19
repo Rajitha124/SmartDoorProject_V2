@@ -1,6 +1,22 @@
 from flask import Flask, render_template, redirect
+import os
+import json
 import firebase_admin
 from firebase_admin import credentials, db
+
+app = Flask(__name__)
+
+if not firebase_admin._apps:
+
+    firebase_credentials = json.loads(
+        os.environ["FIREBASE_CREDENTIALS"]
+    )
+
+    cred = credentials.Certificate(firebase_credentials)
+
+    firebase_admin.initialize_app(cred, {
+        "databaseURL": "https://smartdoorlock-99215-default-rtdb.firebaseio.com/"
+    })
 
 app = Flask(__name__)
 
