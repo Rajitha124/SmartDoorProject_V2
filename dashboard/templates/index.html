@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="refresh" content="2">
+
+<title>Smart Door Dashboard</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+text-align:center;
+
+background:#f5f5f5;
+
+}
+
+img{
+
+width:350px;
+
+border-radius:10px;
+
+box-shadow:0 0 10px gray;
+
+}
+
+button{
+
+padding:15px 30px;
+
+font-size:18px;
+
+margin:15px;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+.unlock{
+
+background:green;
+
+color:white;
+
+}
+
+.reject{
+
+background:red;
+
+color:white;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🚪 Smart Door Dashboard</h1>
+
+{% if visitor %}
+
+<h2>Latest Visitor</h2>
+
+<img src="{{ visitor.image_url }}">
+
+<h3>Time : {{ visitor.time }}</h3>
+
+<h3>Status : {{ visitor.status }}</h3>
+
+<a href="/unlock">
+
+<button class="unlock">
+
+Unlock Door
+
+</button>
+
+</a>
+
+<a href="/reject">
+
+<button class="reject">
+
+Reject Visitor
+
+</button>
+
+</a>
+
+{% endif %}
+
+</body>
+
+</html>
