@@ -1,0 +1,7 @@
+Flask
+firebase-admin
+cloudinary
+python-dotenv
+opencv-python
+face-recognition
+numpy
