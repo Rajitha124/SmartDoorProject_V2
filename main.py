@@ -147,6 +147,10 @@ else:
 
     image_url = upload_image(image_path)
 
+    from notify import send_alert
+
+    send_alert(image_url)
+
     if image_url:
 
         print("✅ Upload Successful")
